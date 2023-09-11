@@ -9,3 +9,15 @@ Accept: application/json
 ### Get data from dataset with sorting and filtering by timestamp field
 GET http://127.0.0.1:8000/compensation_data?salary[gte]=90000&bonus[lte]=60000&sort=timestamp&timestamp[gt]=2020-05-01
 Accept: application/json
+
+### Get data from dataset with 'ne' condition
+GET http://127.0.0.1:8000/compensation_data?city[ne]=Moscow
+Accept: application/json
+
+### Get data from dataset with 'in' condition
+GET http://127.0.0.1:8000/compensation_data?city[in]=Moscow,Morrisville&sort=city
+Accept: application/json
+
+### Get data from dataset with 'not in' condition
+GET http://127.0.0.1:8000/compensation_data?city[notin]=Moscow,Morrisville&sort=city
+Accept: application/json
