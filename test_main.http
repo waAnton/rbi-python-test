@@ -1,0 +1,11 @@
+### Get column definitions
+GET http://127.0.0.1:8000/column_definitions
+Accept: application/json
+
+### Get data from dataset with multiple sorting, multiple conditions and output only the specified columns
+GET http://127.0.0.1:8000/compensation_data?salary[gte]=90000&bonus[lte]=6000&city=Zurich&sort=salary,bonus&fields=company_name,country,salary,%20salary,city,%20bonus
+Accept: application/json
+
+### Get data from dataset with sorting and filtering by timestamp field
+GET http://127.0.0.1:8000/compensation_data?salary[gte]=90000&bonus[lte]=60000&sort=timestamp&timestamp[gt]=2020-05-01
+Accept: application/json
